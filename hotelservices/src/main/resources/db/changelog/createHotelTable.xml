@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+						http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+	<changeSet author="Akash" id="createHotelTable">
+		<createTable tableName="hotel">
+			<column name="hotel_uuid" type="UUID">
+				<constraints nullable="false" primaryKey="true" unique="true" />
+			</column>
+			<column name="name" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+			<column name="star_rating" type="INTEGER">
+				<constraints nullable="false" />
+			</column>
+			<column name="location" type="VARCHAR(200)">
+				<constraints nullable="false" unique="true" />
+			</column>
+			<column name="about" type="VARCHAR(200)">
+				<constraints nullable="true" />
+			</column>
+			<column name="created_date" type="DATETIME">
+				<constraints nullable="true" />
+			</column>
+			<column name="updated_date" type="DATETIME">
+				<constraints nullable="true" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
