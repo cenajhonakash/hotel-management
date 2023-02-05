@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+						http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+	<changeSet author="Akash" id="createRatingTable">
+		<createTable tableName="user_rating">
+			<column name="rating_uuid" type="UUID">
+				<constraints primaryKey="true" unique="true" />
+			</column>
+			<column name="user_uuid" type="UUID">
+				<constraints nullable="false" />
+			</column>
+			<column name="hotel_uuid" type="UUID">
+				<constraints nullable="false" unique="false" />
+			</column>
+			<column name="rating" type="INTEGER">
+				<constraints nullable="false" />
+			</column>
+			<column name="feedback" type="VARCHAR(200)">
+				<constraints nullable="true" />
+			</column>
+			<column name="created_date" type="DATETIME">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
