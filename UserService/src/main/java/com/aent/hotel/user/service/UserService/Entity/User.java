@@ -16,7 +16,6 @@ import javax.persistence.Version;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Type;
 
-import com.aent.hotel.user.service.UserService.dto.HotelDto;
 import com.aent.hotel.user.service.UserService.dto.RatingDto;
 
 import lombok.AllArgsConstructor;
@@ -56,6 +55,4 @@ public class User {
 	@Transient
 	private List<RatingDto> ratings;
 
-	@Transient
-	private HotelDto hotel;
 }

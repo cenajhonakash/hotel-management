@@ -30,6 +30,7 @@ public class UserService {
 		this.userRepository = userRepository;
 		this.mapper = mapper;
 		this.ratingService = ratingService;
+
 	}
 
 	public UserDto getUser(UUID userUuid) {
